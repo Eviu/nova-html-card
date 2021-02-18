@@ -1,17 +1,15 @@
 <template>
-    <div v-if="card.withoutCardStyles" class="htmlCard" :class="cardClassList">
-        <router-link :to="card.url" class="htmlCard-link">
+    <router-link :to="card.url" class="htmlCard-link">
+        <div v-if="card.withoutCardStyles" class="htmlCard" :class="cardClassList">
             <div v-html="card.content" class="htmlCard__content"></div>
-        </router-link>
-    </div>
-
-    <card v-else class="htmlCard" :class="cardClassList">
-        <div class="px-3 py-3">
-            <router-link :to="card.url" class="htmlCard-link">
-                <div v-html="card.content" class="htmlCard__content"></div>
-            </router-link>
         </div>
-    </card>
+
+        <card v-else class="htmlCard" :class="cardClassList">
+            <div class="px-3 py-3">
+                <div v-html="card.content" class="htmlCard__content"></div>
+            </div>
+        </card>
+    </router-link>
 </template>
 
 <script>
@@ -44,5 +42,9 @@
     }
     .htmlCard__content > p:not(:last-child) {
         margin-bottom: 1em;
+    }
+    .htmlCard-link {
+        text-decoration: none;
+        color: inherit;
     }
 </style>

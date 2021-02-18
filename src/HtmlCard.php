@@ -29,6 +29,7 @@ class HtmlCard extends Card
             'withoutCardStyles' => false,
             'forceFullWidth' => false,
             'content' => '',
+            'url'     => '',
         ]);
     }
 
@@ -36,6 +37,18 @@ class HtmlCard extends Card
     public function component()
     {
         return 'html-card';
+    }
+
+    /**
+     * Set card route url
+     *
+     * @param string $routeUrl
+     *
+     * @return HtmlCard
+     */
+    public function url(string $routeUrl)
+    {
+        return $this->withMeta(['url' => $routeUrl]);
     }
 
     /**

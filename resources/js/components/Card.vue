@@ -1,13 +1,15 @@
 <template>
     <div v-if="card.withoutCardStyles" class="htmlCard" :class="cardClassList">
-        <div v-html="card.content" class="htmlCard__content">
-        </div>
+        <router-link :to="card.url" class="htmlCard-link">
+            <div v-html="card.content" class="htmlCard__content"></div>
+        </router-link>
     </div>
 
     <card v-else class="htmlCard" :class="cardClassList">
         <div class="px-3 py-3">
-            <div v-html="card.content" class="htmlCard__content">
-            </div>
+            <router-link :to="card.url" class="htmlCard-link">
+                <div v-html="card.content" class="htmlCard__content"></div>
+            </router-link>
         </div>
     </card>
 </template>

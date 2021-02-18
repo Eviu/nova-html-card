@@ -1,5 +1,5 @@
 {
-    "name": "idf/nova-html-card",
+    "name": "eviu/nova-html-card",
     "description": "A Laravel Nova card to display arbitrary HTML content",
     "keywords": [
         "laravel",
